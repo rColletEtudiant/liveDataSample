@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
   }
 
   private fun setupObserver() {
-    taskViewModel.tasks.observe(this, Observer {
+    taskViewModel.getTasks().observe(this, Observer {
       taskAdapter!!.fill(it!!)
     })
   }
@@ -54,5 +54,7 @@ class HomeActivity : AppCompatActivity() {
       }
     }
   }
+
+
 }
 

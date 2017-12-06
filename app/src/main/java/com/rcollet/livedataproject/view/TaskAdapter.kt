@@ -1,11 +1,13 @@
 package com.rcollet.livedataproject.view
 
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.rcollet.livedataproject.R
 import com.rcollet.livedataproject.data.Task
+import com.rcollet.livedataproject.util.TaskListDiffCallback
 import kotlinx.android.synthetic.main.item_task.view.*
 
 /**
@@ -14,9 +16,10 @@ import kotlinx.android.synthetic.main.item_task.view.*
 
 class TaskAdapter(var tasks: List<Task>, val completeListener: (Task, Boolean) -> Unit, val longClickListener: (Task) -> Unit) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
-  fun fill(tasks: List<Task>) {
+  fun fill(newtasks: List<Task>) {
+    var diffRes: DiffUtil.DiffResult = DiffUtil.calculateDiff(TaskListDiffCallback(tasks, newtasks))
+    diffRes.dispatchUpdatesTo(this)
     this.tasks = tasks
-    notifyDataSetChanged()
   }
   override fun onBindViewHolder(holder: ViewHolder?, position: Int)  = holder!!.bindItems(tasks[position], completeListener, longClickListener)
 

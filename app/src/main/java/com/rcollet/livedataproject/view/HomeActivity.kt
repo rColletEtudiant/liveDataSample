@@ -16,7 +16,7 @@ import javax.inject.Inject
 class HomeActivity : AppCompatActivity() {
 
   @Inject
-  private lateinit var taskViewModel: TaskViewModel
+  lateinit var taskViewModel: TaskViewModel
   private lateinit var taskAdapter: TaskAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {

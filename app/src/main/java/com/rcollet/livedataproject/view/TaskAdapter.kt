@@ -17,9 +17,9 @@ import kotlinx.android.synthetic.main.item_task.view.*
 class TaskAdapter(var tasks: List<Task>, val completeListener: (Task, Boolean) -> Unit, val longClickListener: (Task) -> Unit) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
   fun fill(newtasks: List<Task>) {
-    var diffRes: DiffUtil.DiffResult = DiffUtil.calculateDiff(TaskListDiffCallback(tasks, newtasks))
+    val diffRes: DiffUtil.DiffResult = DiffUtil.calculateDiff(TaskListDiffCallback(tasks, newtasks))
     diffRes.dispatchUpdatesTo(this)
-    this.tasks = tasks
+    this.tasks = newtasks
   }
   override fun onBindViewHolder(holder: ViewHolder?, position: Int)  = holder!!.bindItems(tasks[position], completeListener, longClickListener)
 

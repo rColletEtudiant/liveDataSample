@@ -7,8 +7,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import com.rcollet.livedataproject.R
-import com.rcollet.livedataproject.app
 import com.rcollet.livedataproject.data.Task
+import com.rcollet.livedataproject.util.app
 import com.rcollet.livedataproject.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -16,9 +16,8 @@ import javax.inject.Inject
 class HomeActivity : AppCompatActivity() {
 
   @Inject
-  lateinit var taskViewModel: TaskViewModel
-
-  private var taskAdapter: TaskAdapter? = null
+  private lateinit var taskViewModel: TaskViewModel
+  private lateinit var taskAdapter: TaskAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -31,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
   private fun setupObserver() {
     taskViewModel.getTasks().observe(this, Observer {
-      taskAdapter!!.fill(it!!)
+      taskAdapter.fill(it!!)
     })
   }
 
@@ -54,7 +53,5 @@ class HomeActivity : AppCompatActivity() {
       }
     }
   }
-
-
 }
 

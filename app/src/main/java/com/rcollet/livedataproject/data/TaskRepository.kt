@@ -8,4 +8,5 @@ class TaskRepository @Inject constructor(var taskDao: TaskDao) {
   fun getTasks() = taskDao.getTasks()
   fun createTask(task: Task) = taskDao.createTask(task)
   fun deleteTask(task: Task) = taskDao.deleteTask(task)
+  fun updateTask(task: Task) = taskDao.updateTask(task)
 }

@@ -8,7 +8,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     android:layout_marginEnd="12dp"
-    app:cardBackgroundColor="@color/coolGrey"
+    app:cardBackgroundColor="@android:color/white"
     app:cardCornerRadius="2dp"
     android:layout_marginStart="12dp"
     >
@@ -18,7 +18,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       tools:text="Task no 1"
-      android:textColor="@android:color/white"
+      android:textColor="@color/colorPrimaryDark"
       android:layout_marginStart="10dp"
       android:layout_marginTop="6dp"
       android:layout_marginBottom="6dp"

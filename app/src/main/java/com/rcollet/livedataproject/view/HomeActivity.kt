@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
   }
 
   private fun setupObserver() {
-    taskViewModel.getTasks().observe(this, Observer {
+    taskViewModel.tasks.observe(this, Observer {
       taskAdapter.fill(it!!)
     })
   }
@@ -37,8 +37,10 @@ class HomeActivity : AppCompatActivity() {
   private fun setupAdapter() {
     taskAdapter = TaskAdapter(ArrayList(), { task, bool ->
       task.completed = bool
-      taskViewModel.createTask(task)
-    },{taskViewModel.deleteTask(it)})
+      taskViewModel.updateTask(task)
+    },{
+      taskViewModel.deleteTask(it)
+    })
     task_list.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
     task_list.adapter = taskAdapter
   }

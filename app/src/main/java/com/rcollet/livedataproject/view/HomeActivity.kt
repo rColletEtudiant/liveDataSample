@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
 import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import com.rcollet.livedataproject.R
@@ -40,9 +41,16 @@ class HomeActivity : AppCompatActivity() {
       taskViewModel.updateTask(task)
     },{
       taskViewModel.deleteTask(it)
+//      val intent:Intent = Intent(this, DetailsActivity::class.java)
+//      startActivity(intent)
     })
     task_list.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
     task_list.adapter = taskAdapter
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.main, menu)
+    return true
   }
 
   private fun setupListener() {

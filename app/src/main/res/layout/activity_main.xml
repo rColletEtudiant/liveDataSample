@@ -14,7 +14,7 @@
       android:layout_height="wrap_content"
       app:cardBackgroundColor="@android:color/white"
       app:cardCornerRadius="2dp"
-      android:layout_margin="10dp"
+      android:layout_margin="6dp"
       >
 
     <EditText
@@ -37,6 +37,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="60dp"
+      android:overScrollMode="never"
       />
 
 </FrameLayout>

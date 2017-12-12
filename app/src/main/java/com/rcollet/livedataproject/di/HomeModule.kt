@@ -31,7 +31,7 @@ class HomeModule(private val taskApplication: Application) {
 
   @Provides
   @Singleton
-  fun provideTaskDatabase(application: Application): TaskDatabase = taskDatabase
+  fun provideTaskDatabase(): TaskDatabase = taskDatabase
 
   @Provides
   @Singleton

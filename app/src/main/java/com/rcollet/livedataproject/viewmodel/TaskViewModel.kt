@@ -12,7 +12,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-class TaskViewModel @Inject constructor(var taskRepository: TaskRepository) : ViewModel() {
+class TaskViewModel @Inject constructor(var taskRepository: TaskRepository): ViewModel() {
 
     var tasks: LiveData<List<Task>>
 

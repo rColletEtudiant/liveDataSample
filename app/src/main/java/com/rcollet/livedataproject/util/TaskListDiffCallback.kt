@@ -8,7 +8,7 @@ import com.rcollet.livedataproject.data.Task
  * Created by robincollet on 06/12/2017.
  */
 
-class TaskListDiffCallback(val oldTasks: List<Task>,var newTasks: List<Task>) : DiffUtil.Callback() {
+class TaskListDiffCallback(val oldTasks: List<Task>,val newTasks: List<Task>) : DiffUtil.Callback() {
 
   override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
     return oldTasks[oldItemPosition].id == newTasks[newItemPosition].id
